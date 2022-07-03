@@ -11,9 +11,13 @@
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/scripts.js"></script>
     <script src="../js/restApi.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Eagle Vision</title>
 </head>
 
@@ -56,31 +60,33 @@
             </nav>
         </div>
     </header>
-
+    
     <!--Cadastro-->
     <main id="cadastro" class="padding">
         <div class="container">
             <h1>Eagle Vision</h1>
             <h2>A sua frota, no seu olhar!</h2>
-        </main>
-        
+    </main>
+
     <section id="forms" class="altura-ajustavel">
         <form onsubmit="return false;">
             <div class="mb-3">
                 <label for="inputId" class="form-label">ID:</label>
                 <input class="form-control" type="number" id="id" name="nmID" placeholder="Entre com o ID:">
-                <a href="#contato"><button type="submit" class="btn btn-primary" onclick="consultarCodigo(document.getElementById('id').value)">Consultar</button></a>
+                <a href="#contato"><button type="submit" class="btn btn-primary"
+                        onclick="consultarCodigo(document.getElementById('id').value)">Consultar</button></a>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="nome">NOME:</label>
                 <input type="text" name="nome" class="form-control" id="nome" disabled>
             </div>
-           
+
             <div class="mb-3">
                 <label class="form-label" for="email">EMAIL:</label>
                 <input type="email" name="email" class="form-control" id="email" disabled>
             </div>
-            <a href="#contato"><button type="submit" class="btn btn-primary" onclick="deleteDado(document.getElementById('id').value)">Exclusão</button></a>
+            <a href="#contato"><button type="submit" class="btn btn-primary"
+                    onclick="deleteDado(document.getElementById('id').value)">Exclusão</button></a>
         </form>
     </section>
 
@@ -102,12 +108,12 @@
                     <option label="CEO"></option>
                     <option label="Gerente"></option>
                     <option label="Financeiro"></option>
-                    <option label="Consultoria"></option> 
-                    <option label="Logística"></option> 
-                    <option label="Administração"></option> 
-                    <option label="Marketing"></option> 
-                    <option label="Vendas"></option> 
-                    <option label="Outro"></option>       
+                    <option label="Consultoria"></option>
+                    <option label="Logística"></option>
+                    <option label="Administração"></option>
+                    <option label="Marketing"></option>
+                    <option label="Vendas"></option>
+                    <option label="Outro"></option>
                 </select>
             </div>
             <div class="mb-3">
@@ -116,11 +122,18 @@
             </div>
             <div class="mb-3">
                 <label class="form-label" for="email">EMAIL:</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="exemplo@exemplo.com" required>
+                <input type="email" name="email" class="form-control" id="email" placeholder="exemplo@exemplo.com"
+                    required>
             </div>
-           
-            <a href="#contato"><button type="submit" class="btn btn-primary" onclick="inserirDado()">Inserir</button></a>
+
+            <a href="#contato"><button type="submit" class="btn btn-primary"
+                    onclick="inserirDado()">Inserir</button></a>
         </form>
+        <div id="mensagem-sucesso">
+        </div>
+          
+          <div id="mensagem-erro">
+          </div>
     </section>
 
     <footer id="contato">
