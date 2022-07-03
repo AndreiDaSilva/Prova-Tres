@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/scripts.js" id="script"></script>
+        <title>Eagle Vision</title>
+    </head>
+
+    <body onload="mudaImgLogin()">
+        <!--Cabecalho-->
+    <header>
+        <div class="container flex">
+            <div id="logo">
+            <a href="index.html"> <img id="logo" src="../img/logo.png" alt=""></a>
+            </div>
+            <nav>
+                <div class="mobile-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="#">Planos</a></li>
+                    <li><a href="#">Funcionalidade</a>
+                        <ul>
+                            <li><a href="#">Monitoramento</a></li>
+                            <li><a href="#">Telemetria</a></li>
+                            <li><a href="#">Manutenção</a></li>
+                            <li><a href="#">Abastecimento</a></li>
+                        </ul>
+                    <li><a href="#">A&nbsp;empresa</a>
+                        <ul>
+                            <li><a href="#">Sobre&nbsp;nós</a></li>
+                            <li><a href="#">Carreira</a></li>
+                            <li><a href="#">LGPD</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="cadastro-2.html">Cadastro2</a></li>
+                    <li id="img-usuario"><a href="user.html"></a><img src="../img/icon/account_circle_FILL1_wght400_GRAD0_opsz48.svg"
+                        alt="login" ></a></li>
+               </ul>
+            </nav>
+        </div>
+    </header>
+
+        <!--Cadastro-->
+        <main id="cadastro" class="padding">
+            <div class="container">
+                <h1>Eagle Vision</h1>
+                <h2>A sua frota, no seu olhar!</h2>
+            </main>
+        <section id="forms">
+            <form>
+                <div class="mb-3">
+                    <label for="user-name" class="form-label">Usuário: *</label>
+                    <input class="form-control" type="text" id="user-name" name="user-name" placeholder="Digite seu usuário" required>
+                </div>
+                <div class="mb-3">
+                    <label for="user-password" class="form-label">Senha: *</label>
+                    <input type="password" class="form-control" id="user-password" name="user-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" onsubmit="autenticaUsuario()">Autenticar</button>
+            </form>
+        </section>
+
+        <!--Rodapé-->
+        <footer id="contato">
+            <div class="container flex">
+                <div class="localizacao">
+                    <img src="../img/icon/maps.png" alt="localizacao">
+                    <p>Endereço: 1 Sheikh Mohammed bin Rashid Blvd - Downtown Dubai - Dubai - Emirados Árabes Unidos </p>
+                </div>
+                <div class="social">
+                    <img src="../img/icon/Instagram.png" alt="redes sociais">
+                    <img src="../img/icon/whats.png" alt="redes sociaos">
+                    <p>Criado por Andrei Robson da Silva e Rafael Kretzer</p>
+                </div>
+            </div>
+        </footer>
+        <a href="#inicio" id="topo"><img src="../img/icon/keyboard_arrow_up_FILL1_wght400_GRAD0_opsz48.svg"
+                alt="topo do site"></a>
+
+    <script src="../js/mobile-navbar.js"></script>
+    </body>
+</html>
