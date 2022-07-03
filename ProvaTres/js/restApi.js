@@ -27,11 +27,18 @@ function mostrarDados(data) {
 async function deleteDado(id){
     const response = await fetch(url + id, {method: "DELETE"});
     const data = await response.json();
-    console.log(data);
+    msgAlerta(data);
 }
 
 async function inserirDado() {
     const response = await fetch(url, {method: "PUT"});
 }
 
+function msgAlerta(data){
+    if (data.status === "Ok") {
+        alert(data.mensagem)
+    } else {
+        alert(data.mensagem)
+    }
+}
 
