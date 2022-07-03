@@ -67,7 +67,7 @@
     <section id="forms" class="altura-ajustavel">
         <form onsubmit="return false;">
             <div class="mb-3">
-                <label for="inputId" class="form-label">Código:</label>
+                <label for="inputId" class="form-label">ID:</label>
                 <input class="form-control" type="number" id="id" name="nmID" placeholder="Entre com o ID:">
                 <a href="#contato"><button type="submit" class="btn btn-primary" onclick="consultarCodigo(document.getElementById('id').value)">Consultar</button></a>
             </div>
@@ -80,7 +80,46 @@
                 <label class="form-label" for="email">EMAIL:</label>
                 <input type="email" name="email" class="form-control" id="email" disabled>
             </div>
-            <a href="#contato"><button type="submit" class="btn btn-primary" onclick="consultarCodigo(document.getElementById('id').value)">Exclusão</button></a>
+            <a href="#contato"><button type="submit" class="btn btn-primary" onclick="deleteDado(document.getElementById('id').value)">Exclusão</button></a>
+        </form>
+    </section>
+
+    <section id="forms" class="altura-ajustavel">
+        <form onsubmit="return false;">
+            <div class="mb-3">
+                <label for="codigo" class="form-label">ID:</label>
+                <input class="form-control" type="number" id="codigo" name="codigo" placeholder="Código">
+            </div>
+            <div class="mb-3">
+                <label for="nome" class="form-label">NOME:</label>
+                <input type="text" class="form-control" id="nome" name="nome" required>
+            </div>
+            <div class="mb-3">
+                <label for="cargo" class="form-label">DEPARTAMENTO:</label>
+                <select id="cargo" name="cargo" class="form-select" required>
+                    <option label=""></option>
+                    <option label="Proprietário"></option>
+                    <option label="CEO"></option>
+                    <option label="Gerente"></option>
+                    <option label="Financeiro"></option>
+                    <option label="Consultoria"></option> 
+                    <option label="Logística"></option> 
+                    <option label="Administração"></option> 
+                    <option label="Marketing"></option> 
+                    <option label="Vendas"></option> 
+                    <option label="Outro"></option>       
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="empresa">ENDEREÇO:</label>
+                <input type="text" name="empresa" class="form-control" id="empresa" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="email">EMAIL:</label>
+                <input type="email" name="email" class="form-control" id="email" placeholder="exemplo@exemplo.com" required>
+            </div>
+           
+            <a href="#contato"><button type="submit" class="btn btn-primary" onclick="inserirDado()">Inserir</button></a>
         </form>
     </section>
 
