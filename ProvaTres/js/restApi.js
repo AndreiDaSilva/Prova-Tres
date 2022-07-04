@@ -4,41 +4,29 @@ const url = "https://bu.furb.br/mcardoso/progWeb/apiRestAval.php/cadastro/";
 async function consultarCodigo(id) {
     const response = await fetch(url + id, { method: "GET" });
     const data = await response.json();
-    mostrarDados(data);
-
+    const pessoa = new Pessoa(data.id, data.nome, data.departamento, data.endereco, data.email);
+    mostrarDados(pessoa);
 }
 
-
-function getNome(data) {
-    const nome = data.nome;
-    document.getElementById('nome').value = nome;
-}
-
-function getEmail(data) {
-    const email = data.email;
-    document.getElementById('email').value = email;
-}
-
-function mostrarDados(data) {
-    getNome(data);
-    getEmail(data);
+function mostrarDados(pessoa) {
+    document.getElementById('nome').value = pessoa.getNome();
+    document.getElementById('email').value = pessoa.getEMail();
 }
 
 async function deleteDado(id) {
     const response = await fetch(url + id, { method: "DELETE" });
     const data = await response.json();
-    msgAlerta(data);
+    msgAlerta(data, "msgAlerta");
 }
 
 async function inserirDado() {
 
-    const json = JSON.stringify({
-        id: parseInt(document.getElementById("codigo").value),
-        nome: document.getElementById("nome-formulario").value,
-        departamento: document.getElementById("departamento").selectedOptions[0].label,
-        endereco: document.getElementById("endereco").value,
-        email: document.getElementById("email-formulario").value
-    });
+    const json = JSON.stringify(new Pessoa(parseInt(document.getElementById("codigo").value),
+                                            document.getElementById("nome-formulario").value,
+                                            document.getElementById("departamento").selectedOptions[0].label,
+                                            document.getElementById("endereco").value,
+                                            document.getElementById("email-formulario").value
+    ));
 
     const response = await fetch(url, {
         method: "PUT",
@@ -47,12 +35,12 @@ async function inserirDado() {
     });
     
     const data = await response.json();
-    msgAlerta(data);
+    msgAlerta(data, "msgAlert-2");
 
 }
 
-function msgAlerta(data) {
-    const divMsg = document.getElementById("msgAlerta");
+function msgAlerta(data, elementId) {
+    const divMsg = document.getElementById(elementId);
     const msg = data.mensagem;
     if (data.status === "Ok") {
         divMsg.classList.remove("alert-danger");
