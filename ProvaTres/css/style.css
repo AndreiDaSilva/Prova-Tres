@@ -724,15 +724,19 @@ button {
 }
 
 .alert-success{
-    padding: 1em;
+    padding: 0.5em;    
+    text-align: center;
     background-color: #92e27a;
     color: #005200;
+    border: solid green;
     
 
 }
 
 .alert-danger{
-    padding: 1em;
-    background-color: #fa3757;
+    padding: 0.5em;
+    background-color: #ff91a4;
     color: #960018;
+    text-align: center;
+    border: solid red;
 }
