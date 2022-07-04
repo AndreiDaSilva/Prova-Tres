@@ -31,7 +31,25 @@ async function deleteDado(id) {
 }
 
 async function inserirDado() {
-    const response = await fetch(url, { method: "PUT" });
+    const response = await fetch(url, {
+        method: "PUT",
+        body: JSON.stringify({
+            id: parseInt(document.getElementById("id").value),
+            nome: document.getElementById("nome").value,
+            departamento: document.getElementById("departamento").value,
+            endereco: document.getElementById("endereco").value,
+            email: document.getElementById("email").value
+        }),
+        headers:{
+            'Contet-type': 'aplication/json; charset=UTF-8'
+        }
+    })
+    .then(dadosBrutos => dadosBrutos.json())
+    .then(dadosJSON => mostraResultadoSalvar(dadosJSON));
+    
+    const data = await response.json();
+    msgAlerta(data);
+
 }
 
 function msgAlerta(data) {
