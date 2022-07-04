@@ -21,7 +21,7 @@
     <title>Eagle Vision</title>
 </head>
 
-<body onload="montaElementosCadastro()">
+<body onload="montaElementosCadastro(false)">
     <!--Cabecalho-->
     <header>
         <div class="container flex">
@@ -96,12 +96,12 @@
     <section id="forms" class="altura-ajustavel">
         <form onsubmit="return false;">
             <div class="mb-3">
-                <label for="id" class="form-label">ID:</label>
-                <input class="form-control" type="number" id="id" name="id" placeholder="Código">
+                <label for="codigo" class="form-label">ID:</label>
+                <input class="form-control" type="number" id="codigo" name="codigo" placeholder="Código">
             </div>
             <div class="mb-3">
-                <label for="nome" class="form-label">NOME:</label>
-                <input type="text" class="form-control" id="nome" name="nome" required>
+                <label for="nome-formulario" class="form-label">NOME:</label>
+                <input type="text" class="form-control" id="nome-formulario" name="nome-formulario" required>
             </div>
             <div class="mb-3">
                 <label for="departamento" class="form-label">DEPARTAMENTO:</label>
@@ -124,8 +124,8 @@
                 <input type="text" name="endereco" class="form-control" id="endereco" required>
             </div>
             <div class="mb-3">
-                <label class="form-label" for="email">EMAIL:</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="exemplo@exemplo.com"
+                <label class="form-label" for="email-formulario">EMAIL:</label>
+                <input type="email" name="email-formulario" class="form-control" id="email-formulario" placeholder="exemplo@exemplo.com"
                     required>
             </div>
 

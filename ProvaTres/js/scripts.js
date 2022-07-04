@@ -137,10 +137,12 @@ function montaItensTabela(cadastros){
     }); 
 }
 
-function montaElementosCadastro(){
+function montaElementosCadastro(isTabela = true){
     mudaImgLogin();
-    montaItensTabela(getCadastros());
-    setProximoCodigo();
+    if (isTabela) {
+        montaItensTabela(getCadastros());
+        setProximoCodigo();
+    }
 }
 
 function setProximoCodigo(){
