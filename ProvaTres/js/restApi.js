@@ -5,7 +5,7 @@ async function consultarCodigo(id) {
     const response = await fetch(url + id, { method: "GET" });
     const data = await response.json();
     mostrarDados(data);
-    
+
 }
 
 
@@ -24,21 +24,27 @@ function mostrarDados(data) {
     getEmail(data);
 }
 
-async function deleteDado(id){
-    const response = await fetch(url + id, {method: "DELETE"});
+async function deleteDado(id) {
+    const response = await fetch(url + id, { method: "DELETE" });
     const data = await response.json();
     msgAlerta(data);
 }
 
 async function inserirDado() {
-    const response = await fetch(url, {method: "PUT"});
+    const response = await fetch(url, { method: "PUT" });
 }
 
-function msgAlerta(data){
+function msgAlerta(data) {
+    const divMsg = document.getElementById("msgAlerta");
+    const msg = data.mensagem;
     if (data.status === "Ok") {
-        alert(data.mensagem)
+        divMsg.classList.remove("alert-danger");
+        divMsg.classList.add("alert-success");
+        
+        divMsg.innerHTML = msg;
     } else {
-        alert(data.mensagem)
+        divMsg.classList.remove("alert-success");
+        divMsg.classList.add("alert-danger");
+        divMsg.innerHTML = msg;
     }
 }
-

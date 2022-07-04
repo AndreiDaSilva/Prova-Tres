@@ -60,7 +60,7 @@
             </nav>
         </div>
     </header>
-    
+
     <!--Cadastro-->
     <main id="cadastro" class="padding">
         <div class="container">
@@ -88,8 +88,11 @@
             <a href="#contato"><button type="submit" class="btn btn-primary"
                     onclick="deleteDado(document.getElementById('id').value)">Exclusão</button></a>
         </form>
+        <div class="alert">
+        <div id="msgAlerta" role="alert"></div>
+        </div>
     </section>
-
+    
     <section id="forms" class="altura-ajustavel">
         <form onsubmit="return false;">
             <div class="mb-3">
@@ -131,9 +134,9 @@
         </form>
         <div id="mensagem-sucesso">
         </div>
-          
-          <div id="mensagem-erro">
-          </div>
+
+        <div id="mensagem-erro">
+        </div>
     </section>
 
     <footer id="contato">

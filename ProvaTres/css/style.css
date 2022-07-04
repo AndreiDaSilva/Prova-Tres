@@ -722,3 +722,17 @@ button {
 .altura-ajustavel {
     height: auto !important;
 }
+
+.alert-success{
+    padding: 1em;
+    background-color: #92e27a;
+    color: #005200;
+    
+
+}
+
+.alert-danger{
+    padding: 1em;
+    background-color: #fa3757;
+    color: #960018;
+}
